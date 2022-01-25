@@ -4,12 +4,8 @@ from brownie import accounts, config, TwitterAccount, network
 def deploy_twitter_account():
     account = get_account()
     twitter_account = TwitterAccount.deploy({"from": account})
-    stored_value = twitter_account.tweet("Hello, this is a test tweet")
-    print(stored_value)
-    # transaction = twitter_account.store(15, {"from": account})
-    # transaction.wait(1)
-    # updated_stored_value = twitter_account.retrieve()
-    # print(updated_stored_value)
+    getLatestTweet = twitter_account.isAdmin()
+    print(getLatestTweet)
 
 
 def get_account():
