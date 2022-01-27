@@ -77,4 +77,8 @@ contract TwitterAccount {
     function getNumberOfTweets() public view returns (uint256) {
         return _numberOfTweets;
     }
+
+    function timeCall() public view returns (uint256) {
+        return block.timestamp;
+    }
 }
